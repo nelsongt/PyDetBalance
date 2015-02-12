@@ -90,7 +90,7 @@ for j in xrange (10,20):
       P[k] = V[k] * J[k]
     max_eff_1[i] = np.amax(P)/power_in # Max efficiency for random Ei and Eg
   max_eff_2[j] = np.amax(max_eff_1) # Max efficiency for random Ei but correct Eg
-  max_Eic[j] = Eic[np.argmax(max_eff_1)] # Record best Eic to report Eiv/Eic pairs
+  max_Eic[j] = Eic[np.argmax(max_eff_1)] # Record best Eic to report Eiv&Eic pairs
   print 'Best Eiv: {0} and Eic: {1}'.format(Eiv[j],max_Eic[j])
   
   
@@ -99,4 +99,6 @@ for j in xrange (10,20):
 
 
 plt.plot(Eiv, max_eff_2, 'o', c = 'b')
+plt.xlabel('Intermediate bandgap (eV)')
+plt.ylabel('Max Efficiency')
 plt.show()
